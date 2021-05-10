@@ -1,5 +1,6 @@
 
-let col = document.getElementsByClassName("collapse");
+let col = document.getElementById("collapse");
+let content = document.getElementById("content")
 let span = document.getElementById("symbol");
 let i;
 let id = 0;
@@ -9,8 +10,8 @@ let Name = document.getElementById("name"),
   user = document.getElementById("user");
 
 
-for (i = 0; i < col.length; ++i) {
-  col[i].addEventListener("click", function () {
+
+   const recipe= () => {
 
     if(span.className ==="plusSymbol")
     {
@@ -21,14 +22,14 @@ for (i = 0; i < col.length; ++i) {
       span.className = "plusSymbol"
     }
 
-    var content = this.nextElementSibling;
+   
     if (content.style.display === "block") {
       content.style.display = "none";
     } else {
       content.style.display = "block";
     }
-  });
-}
+  }
+
 
 
 onFormSubmit = () => {
@@ -48,35 +49,35 @@ readFormData = () => {
 const insertNewRecord = data => {
   let parent = document.createElement("ul");
   parent.className = 'user';
-  let li = document.createElement("li");
-  li.innerHTML = `<label for="name">Name</label> <br>`
-  let input = document.createElement("input");
-  input.setAttribute('type', 'text');
-  input.setAttribute('value', data.name);
-  li.appendChild(input);
-  parent.appendChild(li);
+  let listOne = document.createElement("li");
+  listOne.innerHTML = `<label for="name">Name</label> <br>`
+  let inputOne = document.createElement("input");
+  inputOne.setAttribute('type', 'text');
+  inputOne.setAttribute('value', data.name);
+  listOne.appendChild(inputOne);
+  parent.appendChild(listOne);
 
-  let li1 = document.createElement("li");
-  li1.innerHTML = `<label for="name">SurName</label> <br>`
-  let input1 = document.createElement("input");
-  input1.setAttribute('type', 'text');
-  input1.setAttribute('value', data.surname);
-  li1.appendChild(input1);
-  parent.appendChild(li1);
+  let listTwo = document.createElement("li");
+  listTwo.innerHTML = `<label for="name">SurName</label> <br>`
+  let inputTwo = document.createElement("input");
+  inputTwo.setAttribute('type', 'text');
+  inputTwo.setAttribute('value', data.surname);
+  listTwo.appendChild(inputTwo);
+  parent.appendChild(listTwo);
 
-  let li2 = document.createElement("li");
-  li2.innerHTML = `<label for="email">Email</label> <br>`
-  let input2 = document.createElement("input");
-  input2.setAttribute('type', 'email');
-  input2.setAttribute('value', data.email);
-  li2.appendChild(input2);
-  parent.appendChild(li2);
+  let listThree = document.createElement("li");
+  listThree.innerHTML = `<label for="email">Email</label> <br>`
+  let inputThree = document.createElement("input");
+  inputThree.setAttribute('type', 'email');
+  inputThree.setAttribute('value', data.email);
+  listThree.appendChild(inputThree);
+  parent.appendChild(listThree);
 
-  let li3 = document.createElement("li");
-  li3.innerHTML = `<span class="icon"><i class="fa fa-trash"></i>Remove</span>`;
-  li3.setAttribute('id', "newsLetter" + (id++));
-  li3.setAttribute("onClick", "deleteRow(this.id)");
-  parent.appendChild(li3);
+  let listFour = document.createElement("li");
+  listFour.innerHTML = `<span class="icon"><i class="fa fa-trash"></i>Remove</span>`;
+  listFour.setAttribute('id', "newsLetter" + (id++));
+  listFour.setAttribute("onClick", "deleteRow(this.id)");
+  parent.appendChild(listFour);
   user.appendChild(parent);
   user.className = "form-2";
 }

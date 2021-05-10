@@ -637,7 +637,7 @@ html {
 
 /*****collapse ***/
 
-.collapse {
+#collapse {
     background: #E9474B;
     color: #F6F6F6;
     border: none;
