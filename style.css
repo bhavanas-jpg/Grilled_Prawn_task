@@ -247,6 +247,13 @@ html {
     flex-direction: row;
 }
 
+@media(max-width: 575px)
+{
+    .container__three {
+    display: block;
+    }
+}
+
 .container__three h4 {
     font-family: 'Roboto', sans-serif;
     font-size: 30px;
@@ -265,7 +272,9 @@ html {
 
 .content__four {
     display: flex;
-    flex-wrap: wrap
+    flex-wrap: wrap;
+    margin:0px 20px;
+
 }
 
 .content__four div {
@@ -296,6 +305,29 @@ html {
     flex: 40%;
 }
 
+.sort{
+    padding: 53px 34px 0px 34px;  
+}
+
+.sort span{
+    font-size: 18px;
+    font-family: 'Roboto';
+    line-height: 21px;
+    letter-spacing: 0.135px;
+  
+}
+.sort select{
+    font-size: 16px;
+    font-family: 'Roboto';
+    line-height: 21px;
+    letter-spacing: 0.135px;
+    font-weight: bold;
+    padding: 8px 30px;
+    margin: -7px 13px;
+    border-radius: 3px;
+    border: 1px solid #000;
+}
+
 .search {
     padding: 40px 0px 0px 0px;
     margin-left: auto;
@@ -305,7 +337,10 @@ html {
     border: none;
     outline: none;
     padding: 10px 20px;
-    border-radius: 2px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #000;
 
 }
 
@@ -683,4 +718,8 @@ html {
     background: #E9474B;
     color: #F6F6F6;
     transition: 0.5s;
+    margin: -22px 88px 0px 87px;
+    padding: 20px 2px;
+    
+
 }

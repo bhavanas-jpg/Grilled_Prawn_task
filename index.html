@@ -49,157 +49,162 @@
     </header>
     <!--header-Section :end-->
 
-    <!--OurRecipes : start-->
-    <div class="container">
-        <div class="container__three recipe__one">   
-            <div >
-                <h4>Our Recipes</h4>
-            <button type="button" id="collapse" onclick="recipe()">Filter recipes by
-                <span  id="symbol" class="plusSymbol"></span> </button>        
+   <!--OurRecipes : start-->
+   <div class="container">
+
+    <div class="container__three recipe__one">   
+        <div >
+            <h4>Our Recipes</h4>
+        <button type="button" id="collapse" onclick="recipe()">Filter recipes by
+            <span  id="symbol" class="plusSymbol"></span> </button>        
+        </div>
+    
+        
+            <div class="sort">
+                <span for="sort">Sort by
+                    <select name="sort" id="sort">
+                        <option value="Newest First">Newest First</option>
+                        <option value="Oldest First">Oldest First</option>
+                    </select>
+                </span>
             </div>
-            <div id="content">
-                <div class="content__four">
-                    <div>
-                        <h5>Food Type:</h5>
-                        <ul>
-                            <li>
-                                <div class="checkbox">
-                                    <input type="checkbox" />
-                                    <label> Appetisers</label>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="checkbox">
-                                    <input type="checkbox" />
-                                    <label> Desserts</label>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="checkbox">
-                                    <input type="checkbox" />
-                                    <label> Mains</label>
-                                </div>
+        <div class="search">
+            <a href="#" class="fa fa-search"></a>
+           <input type="text" placeholder=" Search recipe">            
+        </div>
+    </div>
 
-                            </li>
-                            <li>
-                                <div class="checkbox">
-                                    <input type="checkbox" />
-                                    <label>Special Ocassions</label>
-                                </div>
+    <div id="content">
+        <div class="content__four">
+            <div>
+                <h5>Food Type:</h5>
+                <ul>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" />
+                            <label> Appetisers</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" />
+                            <label> Desserts</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" />
+                            <label> Mains</label>
+                        </div>
 
-                            </li>
-                        </ul>
-                    </div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" />
+                            <label>Special Ocassions</label>
+                        </div>
 
-                    <div>
-                        <h5>Nationality:</h5>
-                        <ul>
-                            <li>
-                                <div class="checkbox">
-                                    <input type="checkbox" />
-                                    <label> Italian(34)</label>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="checkbox">
-                                    <input type="checkbox" />
-                                    <label>French(30)</label>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="checkbox">
-                                    <input type="checkbox" />
-                                    <label>Spanish(22)</label>
-                                </div>
-
-                            </li>
-                            <li>
-                                <div class="checkbox">
-                                    <input type="checkbox" />
-                                    <label>Peruvian(3)</label>
-                                </div>
-
-                            </li>
-                        </ul>
-                    </div>
-                    <div>
-                        <ul>
-                            <li>
-                                <div class="checkbox">
-                                    <input type="checkbox" />
-                                    <label>Chinese(18)</label>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="checkbox">
-                                    <input type="checkbox" />
-                                    <label>Indian(13)</label>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="checkbox">
-                                    <input type="checkbox" />
-                                    <label>Thai(10)</label>
-                                </div>
-
-                            </li>
-                            <li>
-                                <div class="checkbox">
-                                    <input type="checkbox" />
-                                    <label>Norwegian(4)</label>
-                                </div>
-
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <ul>
-                            <li>
-                                <div class="checkbox">
-                                    <input type="checkbox" />
-                                    <label>Polish(2)</label>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="checkbox">
-                                    <input type="checkbox" />
-                                    <label>Danish(3)</label>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="checkbox">
-                                    <input type="checkbox" />
-                                    <label>Belgian(7)</label>
-                                </div>
-
-                            </li>
-                            <li>
-                                <div class="checkbox">
-                                    <input type="checkbox" />
-                                    <label>Persian(13)</label>
-                                </div>
-
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                    </li>
+                </ul>
             </div>
-                <div style="padding: 53px 34px 0px 34px;">
-                    <span for="sort">Sort by
-                        <select name="sort" id="sort">
-                            <option value="Newest First">Newest First</option>
-                            <option value="Oldest First">Oldest First</option>
-                        </select>
-                    </span>
-                </div>
-            <div class="search">
-                <a href="#" class="fa fa-search"></a>
-               <input type="text" placeholder=" Search recipe">            
+
+            <div>
+                <h5>Nationality:</h5>
+                <ul>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" />
+                            <label> Italian(34)</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" />
+                            <label>French(30)</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" />
+                            <label>Spanish(22)</label>
+                        </div>
+
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" />
+                            <label>Peruvian(3)</label>
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" />
+                            <label>Chinese(18)</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" />
+                            <label>Indian(13)</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" />
+                            <label>Thai(10)</label>
+                        </div>
+
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" />
+                            <label>Norwegian(4)</label>
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <ul>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" />
+                            <label>Polish(2)</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" />
+                            <label>Danish(3)</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" />
+                            <label>Belgian(7)</label>
+                        </div>
+
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" />
+                            <label>Persian(13)</label>
+                        </div>
+
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
-    <!--OurRecipes : end-->
+    
+</div>
+<!--OurRecipes : end-->
 
     <!--Recipes Card: start-->
     <div class="container">
