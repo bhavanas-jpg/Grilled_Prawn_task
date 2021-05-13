@@ -1,17 +1,26 @@
 let col = document.getElementById("collapse");
 let content = document.getElementById("content")
 let span = document.getElementById("symbol");
-let i;
-let id = 0;
+let i, id = 0;
 let Name = document.getElementById("name"),
     Surname = document.getElementById("surname"),
     Email = document.getElementById("email"),
-    user = document.getElementById("user");
+    user = document.getElementById("user"),
+    isNameValid, isSurnameValid, isEmailValid;
+let subBtn = document.getElementById("sub-btn");
+let regExp = /^[a-zA-Z]{5,10}$/;
+let regEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
+/**hamburger Menu */
+let hamburger = document.getElementById('hamburger');
+let navUl = document.getElementById('nav-ul');
 
+hamburger.addEventListener('click', () => {
+    navUl.classList.toggle('show');
+})
 
+/**filter by recipe */
 const recipe = () => {
-
     if (span.className === "plusSymbol") {
         span.classList.remove("plusSymbol");
         span.className = "minusSymbol";
@@ -25,14 +34,13 @@ const recipe = () => {
         content.style.display = "block";
     }
 }
-
-
-
+/**newsletter part */
 onFormSubmit = () => {
     let formData = readFormData();
     insertNewRecord(formData);
+    resetForm();
 }
-
+/**reading the form values */
 readFormData = () => {
     let formData = {
         name: Name.value,
@@ -42,6 +50,89 @@ readFormData = () => {
     return formData;
 }
 
+Name.addEventListener("keyup", function () {
+    isNameValid = checkName(Name);
+    checkInput();
+});
+
+Surname.addEventListener("keyup", function () {
+    isSurnameValid = checkSurname(Surname);
+    checkInput();
+});
+
+Email.addEventListener("keyup", function () {
+    isEmailValid = checkEmail(Email);
+    checkInput();
+})
+
+function checkInput() {
+    let isFormValid = (isNameValid && isSurnameValid && isEmailValid);
+    // if all form values are true , enable the submit button
+    if (isFormValid) {
+        subBtn.disabled = false;
+    }
+    if (!isFormValid && subBtn.disabled == false) {
+        subBtn.disabled = true;
+    }
+}
+/**validating the form values */
+function checkName(fname) {
+    message = document.getElementById("userName");
+    if (!fname.value) {
+        setErrorFor(fname, message);
+        return false;
+
+    } else if (regExp.test(fname.value)) {
+        setSuccessFor(message);
+        return true;
+
+    } else {
+        setErrorFor(fname, message);
+        return false;
+    }
+}
+
+function checkSurname(Surname) {
+    message = document.getElementById("userSurname");
+    if (!Surname.value) {
+        setErrorFor(Surname, message);
+        return false;
+
+    } else if (regExp.test(Surname.value)) {
+        setSuccessFor(message);
+        return true;
+
+    } else {
+        setErrorFor(Surname, message);
+        return false;
+    }
+}
+
+function checkEmail(Email) {
+    message = document.getElementById("userEmail");
+    if (!Email.value) {
+        setErrorFor(Email, message);
+        return false;
+
+    } else if (regEmail.test(Email.value)) {
+        setSuccessFor(message);
+        return true;
+
+    } else {
+        setErrorFor(Email, message);
+        return false;
+    }
+}
+/**validate error function */
+const setErrorFor = (input, message) => {
+    message.innerText = `enter a vaild ${input.name}`;
+}
+/**validate success function */
+const setSuccessFor = (message) => {
+    message.innerText = "";
+}
+
+/**add friend functionality in newsletter */
 const insertNewRecord = data => {
     let parent = document.createElement("ul");
     parent.className = 'user';
@@ -75,11 +166,19 @@ const insertNewRecord = data => {
     listFour.setAttribute("onClick", "deleteRow(this.id)");
     parent.appendChild(listFour);
     user.appendChild(parent);
-    user.className = "form-2";
+    user.className = "newsletter__form";
 }
 
+/**remove friend function */
 function deleteRow(id) {
     parentElement = document.getElementById(id).parentNode;
     console.log(parentElement);
     parentElement.remove();
+}
+/**reset the form */
+const resetForm = () => {
+    Name.value = "";
+    Surname.value = "";
+    Email.value = "";
+    subBtn.disabled = true;
 }
