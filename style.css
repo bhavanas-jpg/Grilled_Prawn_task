@@ -401,6 +401,10 @@ html {
     flex: 1;
 }
 
+.content__four--nationality{
+    border-left:1px solid #fff;
+    padding-left: 30px;
+}
 .recipe {
     display: flex;
     flex-wrap: wrap;
@@ -473,6 +477,7 @@ html {
         .container__three{
             padding: 20px 20px;
         }
+       
 }
 @media(max-width: 800px) {
     .container__three h4 {
@@ -580,6 +585,13 @@ html {
 }
 
 @media(max-width: 575px) {
+    .content__four div {
+        flex: 100%;
+    }
+    .content__four--nationality{
+        border:0;
+        padding: 0;
+    }
     .container__one h4 {
         font-size: 23px;
     }
@@ -588,13 +600,7 @@ html {
         padding: 20px 40px;
     }
 }
-
-@media(max-width: 575px) {
-    .content__four div {
-        flex: 100%;
-    }
-}
-
+/***sectionOne : end ***/
 /*** card : start ***/
 .row {
     display: flex;
@@ -667,15 +673,7 @@ html {
     cursor: pointer;
 }
 
-.return span::after {
-    content: '^';
-    color: #E9474B;
-    font-size: 18px;
-    font-weight: bold;
-    margin-left: 5px;
-}
 
-/***sectionOne : end ***/
 
 /***newsletter section:start ***/
 .container__two {

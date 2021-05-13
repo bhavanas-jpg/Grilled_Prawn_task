@@ -34,11 +34,16 @@ const recipe = () => {
         content.style.display = "block";
     }
 }
+
 /**newsletter part */
 onFormSubmit = () => {
-    let formData = readFormData();
-    insertNewRecord(formData);
-    resetForm();
+    if (Name.value && Surname.value && Email.value !== '') {
+        let formData = readFormData();
+        insertNewRecord(formData);
+        resetForm();
+    } else {
+        alert("please fill the newsletter form  completely!!")
+    }
 }
 /**reading the form values */
 readFormData = () => {
@@ -51,45 +56,27 @@ readFormData = () => {
 }
 
 Name.addEventListener("keyup", function () {
-    isNameValid = checkName(Name);
-    checkInput();
+    checkName(Name);
 });
 
 Surname.addEventListener("keyup", function () {
     isSurnameValid = checkSurname(Surname);
-    checkInput();
 });
 
 Email.addEventListener("keyup", function () {
-    isEmailValid = checkEmail(Email);
-    checkInput();
+    checkEmail(Email);
 })
 
-function checkInput() {
-    let isFormValid = (isNameValid && isSurnameValid && isEmailValid);
-    // if all form values are true , enable the submit button
-    if (isFormValid) {
-        subBtn.disabled = false;
-    }
-    if (!isFormValid && subBtn.disabled == false) {
-        subBtn.disabled = true;
-       
-    }
-}
+
 /**validating the form values */
 function checkName(fname) {
     message = document.getElementById("userName");
     if (!fname.value) {
         setErrorFor(fname, message);
-        return false;
-
     } else if (regExp.test(fname.value)) {
         setSuccessFor(message);
-        return true;
-
     } else {
         setErrorFor(fname, message);
-        return false;
     }
 }
 
@@ -97,15 +84,10 @@ function checkSurname(Surname) {
     message = document.getElementById("userSurname");
     if (!Surname.value) {
         setErrorFor(Surname, message);
-        return false;
-
     } else if (regExp.test(Surname.value)) {
         setSuccessFor(message);
-        return true;
-
     } else {
         setErrorFor(Surname, message);
-        return false;
     }
 }
 
@@ -113,15 +95,11 @@ function checkEmail(Email) {
     message = document.getElementById("userEmail");
     if (!Email.value) {
         setErrorFor(Email, message);
-        return false;
-
     } else if (regEmail.test(Email.value)) {
         setSuccessFor(message);
-        return true;
-
     } else {
         setErrorFor(Email, message);
-        return false;
+
     }
 }
 /**validate error function */
@@ -181,5 +159,4 @@ const resetForm = () => {
     Name.value = "";
     Surname.value = "";
     Email.value = "";
-    subBtn.disabled = true;
 }
