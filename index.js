@@ -73,6 +73,7 @@ function checkInput() {
     }
     if (!isFormValid && subBtn.disabled == false) {
         subBtn.disabled = true;
+       
     }
 }
 /**validating the form values */

@@ -455,6 +455,25 @@ html {
     top: -3.8px;
 }
 
+@media(max-width: 500px)
+{
+    .container__three h4 {
+        font-size: 19px;
+        margin-left: 50px;
+    } 
+    #collapse{
+        margin-left: 28px !important;
+    }
+    #content{
+        margin: -22px 88px 0px 85px;
+        }
+        .sortMobileView{
+            padding: 18px 10px 0px 0px !important;
+        }
+        .container__three{
+            padding: 20px 20px;
+        }
+}
 @media(max-width: 800px) {
     .container__three h4 {
         font-size: 20px;
